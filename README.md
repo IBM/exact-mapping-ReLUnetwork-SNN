@@ -1,4 +1,5 @@
 # An Exact Mapping From ReLU Networks to Spiking Neural Networks
+[![DOI](https://zenodo.org/badge/680052801.svg)](https://zenodo.org/badge/latestdoi/680052801)
 
 This repository contains code material for the publication: Stanojevic, A., Woźniak, S., Bellec, G., Cherubini, G., Pantazi, A., &amp; Gerstner, W. (2022). An Exact Mapping From ReLU Networks to Spiking Neural Networks. arXiv preprint arXiv:2212.12522. https://arxiv.org/abs/2212.12522 
 
