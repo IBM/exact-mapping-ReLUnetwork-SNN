@@ -1,0 +1,35 @@
+Phase1_ReLU_model_preprocessing.py FLAGS (the rest are set to default)
+
+1. MNIST (FC) -> {data_name: "MNIST", model_name: "mnist_fc_relu_original", CNN:False, logging_dir:"./models/MNIST/FC/", layers:2}
+2. MNIST (FC + L1 regularization) -> {data_name: "MNIST", model_name: "mnist_fc_relu_original", CNN:False, logging_dir:"./models/MNIST/FC/", layers:2, l1:0.00045}
+3. MNIST (LeNet) -> {data_name: "MNIST", model_name: "mnist_lenet_relu_original", CNN:True, logging_dir:"./models/MNIST/LeNet/", layers:5}
+4. MNIST (VGG) -> {data_name: "MNIST", model_name: "mnist_vgg_relu_original", CNN:True, logging_dir:"./models/MNIST/VGG/", layers:16}
+5. fMNIST (VGG) -> {data_name: "fMNIST", model_name: "fmnist_vgg_relu_original", CNN:True, logging_dir:"./models/fMNIST/VGG/", layers:16}
+6. CIFAR10 (VGG) -> {data_name: "CIFAR10", model_name: "cifar10_vgg_relu_original", CNN:True, logging_dir:"./models/CIFAR10/VGG/", layers:15}
+7. CIFAR10 (VGG + L1 regularization) -> {data_name: "CIFAR10", model_name: "cifar10_vgg_relu_original", CNN:True, logging_dir:"./models/CIFAR10/VGG/", layers:15, l1:0.000001}
+8. CIFAR100 (VGG) -> {data_name: "CIFAR100", model_name: "cifar100_vgg_relu_original", CNN:True, logging_dir:"./models/CIFAR100/VGG/", layers:15}
+9. PLACES365 (VGG) -> {data_name: "PLACES365", model_name: "places_vgg_relu_original", CNN:True, logging_dir:"./models/PLACES365/VGG/", layers:16, places_data_path: ""}
+9. PASS (VGG) -> {data_name: "PASS", model_name: "pass_vgg_relu_original", CNN:True, logging_dir:"../models/PASS/VGG/", layers:16, pass_data_path:""}
+
+
+Phase2_conversion_to_SNN.py FLAGS (the rest are set to default)
+
+
+1. MNIST (FC) -> {data_name: "MNIST", model_name: "mnist_fc_relu_scaled", CNN:False, logging_dir:"./models/MNIST/FC/", layers:2, bathc_size:8}
+2. MNIST (FC + L1 regularization) -> {data_name: "MNIST", model_name: "mnist_fc_relu_l1_scaled", CNN:False, logging_dir:"./models/MNIST/FC/", layers:2, batch_size:8}
+3. MNIST (LeNet) -> {data_name: "MNIST", model_name: "mnist_lenet_relu_scaled", CNN:True, logging_dir:"./models/MNIST/LeNet/", layers:5, batch_size:8}
+4. MNIST (VGG) -> {data_name: "MNIST", model_name: "mnist_vgg_relu_scaled", CNN:True, logging_dir:"./models/MNIST/VGG/", layers:16, batch_size:8}
+5. fMNIST (VGG) -> {data_name: "fMNIST", model_name: "fmnist_vgg_relu_scaled", CNN:True, logging_dir:"./models/fMNIST/VGG/", layers:16, batch_size:8}
+6. CIFAR10 (VGG) -> {data_name: "CIFAR10", model_name: "cifar10_vgg_relu_scaled", CNN:True, logging_dir:"./models/CIFAR10/VGG/", layers:15, batch_size:1}
+7. CIFAR10 (VGG + L1 regularization) -> {data_name: "CIFAR10", model_name: "cifar10_vgg_relu_l1_scaled", CNN:True, logging_dir:"./models/CIFAR10/VGG/", layers:15, batch_size:1}
+8. CIFAR100 (VGG) -> {data_name: "CIFAR100", model_name: "cifar100_vgg_relu_scaled", CNN:True, logging_dir:"./models/CIFAR100/VGG/", layers:15, batch_size:1}
+9. PLACES365 (VGG) -> {data_name: "PLACES365", model_name: "places_vgg_relu_scaled", CNN:True, logging_dir:"./models/PLACES365/VGG/", layers:16, batch_size:1, part:{0, 1, ..., 12}, batch_size:1, places_data_path: ""}
+9. PASS (VGG) -> {data_name: "PASS", model_name: "pass_vgg_relu_scaled", CNN:True, logging_dir:"./models/PASS/VGG/", layers:16, part:{0, 1, ..., 9}, batch_size:1, pass_data_path: ""}
+
+
+Phase2_conversion_to_SNN.py FLAGS Robustness experiments (the rest are set to default)
+
+1. CIFAR10 (VGG + different values for zeta hyperparameter)-> {data_name: "CIFAR10", model_name: "cifar10_vgg_relu_scaled", CNN:True, logging_dir:"./models/CIFAR10/VGG/", layers:15, batch_size:1, zeta:{-0.7, -0.6, -0.5, -0.4, -0.3, 0, 0.5}, trial: {1, 2, ..., 16}}
+2. CIFAR10 (VGG + different values for noise hyperparameter)-> {data_name: "CIFAR10", model_name: "cifar10_vgg_relu_scaled", CNN:True, logging_dir:"./models/CIFAR10/VGG/", layers:15, batch_size:1, noise:{0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.03, 0.05}, trial: {1, 2, ..., 16}}
+3. CIFAR10 (VGG + different values for alpha_noise hyperparameter)-> {data_name: "CIFAR10", model_name: "cifar10_vgg_relu_scaled", CNN:True, logging_dir:"./models/CIFAR10/VGG/", layers:15, batch_size:1, alpha_noise:{0, 0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005}, trial: {1, 2, ..., 16}}
+
