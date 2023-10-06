@@ -1,7 +1,7 @@
 # An Exact Mapping From ReLU Networks to Spiking Neural Networks
 [![DOI](https://zenodo.org/badge/680052801.svg)](https://zenodo.org/badge/latestdoi/680052801)
 
-This repository contains code material for the publication: Stanojevic, A., Woźniak, S., Bellec, G., Cherubini, G., Pantazi, A., &amp; Gerstner, W. (2022). An Exact Mapping From ReLU Networks to Spiking Neural Networks. arXiv preprint arXiv:2212.12522. https://arxiv.org/abs/2212.12522 
+This repository contains code material for the publication: Stanojevic, A., Woźniak, S., Bellec, G., Cherubini, G., Pantazi, A., &amp; Gerstner, W. "An Exact Mapping From ReLU Networks to Spiking Neural Networks", *Neural Networks* (2023).
 
 Deep spiking neural networks (SNNs) offer the promise of low-power artificial intelligence. However, training deep SNNs from scratch or converting deep artificial neural networks to SNNs without loss of performance has been a challenge. An exact mapping enables to convert a pretrained high-performance network with Rectified Linear Units (ReLUs) to an energy-efficient SNN with zero percent drop in accuracy. The exact mapping is coded in Python and Tensorflow.
 
